@@ -3,4 +3,7 @@ class Test
   def initialize(q,a1,a2,a3,a4,t)
     @q, @a1, @a2, @a3, @a4, @t = q, a1, a2, a3, a4, t
   end
+  def showq()
+    puts "Pregunta:", q
+  end
 end
