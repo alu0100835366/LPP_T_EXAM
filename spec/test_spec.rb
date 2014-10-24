@@ -30,5 +30,9 @@ describe Test do
       @q1.a4.should eq("Puede")
     end
   end
-  
+  describe "#Almanecamiento de Respuesta Correcta" do
+    it "Se guarda correctamente la respuesta correcta" do
+      @q1.t.should eq(3)
+    end
+  end
 end
