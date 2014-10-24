@@ -35,4 +35,9 @@ describe Test do
       @q1.t.should eq(3)
     end
   end
+  describe "#Mostrar Pregunta" do
+    it "Se muestra la pregunta correctamente" do
+      @q1.showq()
+    end
+  end
 end
