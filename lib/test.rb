@@ -20,5 +20,7 @@ class Test
     elsif @a == 4
      @a = a4
     end
+    
+    print "\nLa respuesta correcta es: ", a
   end
 end
