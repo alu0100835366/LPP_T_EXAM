@@ -4,6 +4,9 @@ class Test
     @q, @a1, @a2, @a3, @a4, @t = q, a1, a2, a3, a4, t
   end
   def showq()
-    puts "Pregunta:", q
+    print "Pregunta: ", q, "\n"
+  end
+  def showa()
+    print "\nA) ", a1, "\nB) ", a2, "\nC) ", a3, "\nD) ", a4
   end
 end
