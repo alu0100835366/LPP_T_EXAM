@@ -2,7 +2,7 @@ require "lib/test.rb"
 
 describe Test do
   before :each do
-    @q1 = Test.new("Hola?", "Si", "No", "Quizas", "Puede")
+    @q1 = Test.new("Hola?", "Si", "No", "Quizas", "Puede", 3)
   end
   
   describe "#Almacenamiento de Pregunta" do
