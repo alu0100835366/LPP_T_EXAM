@@ -1,4 +1,4 @@
-class list
+class List
 
 	Node = Struct.new(:value, :next)
 
