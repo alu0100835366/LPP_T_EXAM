@@ -20,7 +20,7 @@ class List
 
 	def pop
 		if @tail
-			if @head=@tail
+			if @head==@tail
 				puts @head[:value]
 				@head=@tail=nil
 			else
