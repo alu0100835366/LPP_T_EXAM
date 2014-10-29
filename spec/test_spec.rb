@@ -6,6 +6,7 @@ describe Test do
     @q2 = Test.new("¿Cual es la salida del siguiente còdigo Ruby? \n class Xyz \n   def pots \n     @nice \n   end \n end \n\n xyz = Xyz.new \n p xyz.pots", ['#<Xyz:0xa000208', 'nil', "0", "Ninguna de las anteriores"], 2, 2)
     @q3 = Test.new("La siguiente definicion de un hash en Ruby es valida: \n hash_raro = { \n   [1, 2, 3] => Object.new(), \n   hash.new => :toto \n }", ["Cierto", "Falso"], 1,1);
     @q4 = Test.new('Cual es la salida del siguiente codigo Ruby?'"\n"' class Array'"\n"'   def say_hi'"\n"'     "HEY!"'"\n"'   end'"\n"' end'"\n\n"' p [1, "bob"].say_hi', ["1", "bob", "HEY!", "Ninguna de las anteriores"],3,3);
+    @q5 = Test.new('¿Cual es el tipo del objeto en el siguiente codigo en Ruby?'"\n"'class Objeto'"\n"'end', ["Una instancia de la clase", "Una constante", "Un objeto", "Ninguna de las anteriores"], 4,4);
   end
   
   describe "#Almacenamiento de Pregunta" do
@@ -103,6 +104,23 @@ describe Test do
     it "Se comprueba que la respuesta es la correcta" do
       @q4.ask()
       @q4.a.should eq @q4.a1[2]
+    end
+  end
+  /TESTS PARA LA CUARTA PREGUNTA/
+  describe "#Mostrar Pregunta 4" do
+    it "Se muestra la pregunta correctamente" do
+      @q5.showq()
+    end
+  end
+  describe "#Mostrar Respuestas 4" do
+    it "Se muestran las respuestas correctamente" do
+      @q5.showa()
+    end
+  end
+  describe "#Respuesta Correcta 4" do
+    it "Se comprueba que la respuesta es la correcta" do
+      @q5.ask()
+      @q5.a.should eq @q5.a1[3]
     end
   end
 end
