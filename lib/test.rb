@@ -13,17 +13,13 @@ class Test
     end
   end
   def ask()
-    puts "\n\nElige una de las 4 opciones."
-    if @a == 1
-      @a = a1[0]
-    elsif @a == 2
-      @a = a1[1]
-    elsif @a == 3
-     @a = a2[2]
-    elsif @a == 4
-     @a = a1[3]
+    puts "\n\nElige una de las opciones."
+     for i in(0...a1.size)
+       if @a == i+1
+      @a = a1[i]
+       end
     end
     
-    print "\nLa respuesta correcta es: ", a
+    print "\nLa respuesta correcta es: ", a, "\n\n\n\n"
   end
 end
