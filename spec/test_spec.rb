@@ -3,7 +3,8 @@ require "lib/test.rb"
 describe Test do
   before :each do
     @q1 = Test.new("Hola?", ["Si", "No", "Quizas", "Puede"], 3, 1)
-    @q2 = Test.new('¿Cual es la salida del siguiente còdigo Ruby?', ['#<Xyz:0xa000208', 'nil', "0", "Ninguna de las anteriores"], 2, 2)
+    @q2 = Test.new("¿Cual es la salida del siguiente còdigo Ruby? \n class Xyz \n   def pots \n     @nice \n   end \n end \n\n xyz = Xyz.new \n p xyz.pots", ['#<Xyz:0xa000208', 'nil', "0", "Ninguna de las anteriores"], 2, 2)
+    @q3 = Test.new("La siguiente definicion de un hash en Ruby es valida: \n hash_raro = { \n   [1, 2, 3] => Object.new(), \n   hash.new => :toto \n }", ["Cierto", "Falso"], 1,1);
   end
   
   describe "#Almacenamiento de Pregunta" do
@@ -52,6 +53,7 @@ describe Test do
       @q1.a.should eq @q1.a1[0]
     end
   end
+  /TESTS PARA LA PRRIMERA PREGUNTA/
   describe "#Mostrar Pregunta 1" do
     it "Se muestra la pregunta correctamente" do
       @q2.showq()
@@ -66,6 +68,23 @@ describe Test do
     it "Se comprueba que la respuesta es la correcta" do
       @q2.ask()
       @q2.a.should eq @q2.a1[1]
+    end
+  end
+  /TESTS PARA LA SEGUNDA PREGUNTA/
+  describe "#Mostrar Pregunta 2" do
+    it "Se muestra la pregunta correctamente" do
+      @q3.showq()
+    end
+  end
+  describe "#Mostrar Respuestas 2" do
+    it "Se muestran las respuestas correctamente" do
+      @q3.showa()
+    end
+  end
+  describe "#Respuesta Correcta 2" do
+    it "Se comprueba que la respuesta es la correcta" do
+      @q3.ask()
+      @q3.a.should eq @q3.a1[0]
     end
   end
 end
