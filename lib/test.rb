@@ -8,7 +8,7 @@ class Test
     print "Pregunta: ", q, "\n"
   end
   def showa()
-    for i in(0...4)
+    for i in(0...a1.size)
       print "\nA) ",  a1[i]
     end
   end

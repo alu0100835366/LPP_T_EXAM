@@ -3,6 +3,7 @@ require "lib/test.rb"
 describe Test do
   before :each do
     @q1 = Test.new("Hola?", ["Si", "No", "Quizas", "Puede"], 3, 1)
+    @q2 = Test.new('¿Cual es la salida del siguiente còdigo Ruby?', ['#<Xyz:0xa000208', 'nil', "0", "Ninguna de las anteriores"], 2, 2)
   end
   
   describe "#Almacenamiento de Pregunta" do
@@ -49,6 +50,22 @@ describe Test do
     it "Se comprueba que la respuesta es la correcta" do
       @q1.ask()
       @q1.a.should eq @q1.a1[0]
+    end
+  end
+  describe "#Mostrar Pregunta 1" do
+    it "Se muestra la pregunta correctamente" do
+      @q2.showq()
+    end
+  end
+  describe "#Mostrar Respuestas 1" do
+    it "Se muestran las respuestas correctamente" do
+      @q2.showa()
+    end
+  end
+  describe "#Respuesta Correcta 1" do
+    it "Se comprueba que la respuesta es la correcta" do
+      @q2.ask()
+      @q2.a.should eq @q2.a1[1]
     end
   end
 end
