@@ -7,6 +7,7 @@ describe Test do
     @q3 = Test.new("La siguiente definicion de un hash en Ruby es valida: \n hash_raro = { \n   [1, 2, 3] => Object.new(), \n   hash.new => :toto \n }", ["Cierto", "Falso"], 1,1);
     @q4 = Test.new('Cual es la salida del siguiente codigo Ruby?'"\n"' class Array'"\n"'   def say_hi'"\n"'     "HEY!"'"\n"'   end'"\n"' end'"\n\n"' p [1, "bob"].say_hi', ["1", "bob", "HEY!", "Ninguna de las anteriores"],3,3);
     @q5 = Test.new('¿Cual es el tipo del objeto en el siguiente codigo en Ruby?'"\n"'class Objeto'"\n"'end', ["Una instancia de la clase", "Una constante", "Un objeto", "Ninguna de las anteriores"], 4,4);
+    @q6 = Test.new("Es apropiado que una clase Tablero herede de una clase Juego", ["Cierto", "Falso"], 1,1);
   end
   
   describe "#Almacenamiento de Pregunta" do
@@ -121,6 +122,23 @@ describe Test do
     it "Se comprueba que la respuesta es la correcta" do
       @q5.ask()
       @q5.a.should eq @q5.a1[3]
+    end
+  end
+  /TESTS PARA LA QUINTA PREGUNTA/
+  describe "#Mostrar Pregunta 5" do
+    it "Se muestra la pregunta correctamente" do
+      @q6.showq()
+    end
+  end
+  describe "#Mostrar Respuestas 5" do
+    it "Se muestran las respuestas correctamente" do
+      @q6.showa()
+    end
+  end
+  describe "#Respuesta Correcta 5" do
+    it "Se comprueba que la respuesta es la correcta" do
+      @q6.ask()
+      @q6.a.should eq @q6.a1[0]
     end
   end
 end
