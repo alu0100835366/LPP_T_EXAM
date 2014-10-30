@@ -1,4 +1,6 @@
 class List
+	attr_reader :head
+	attr_reader :tail
 
 	Node = Struct.new(:value, :next)
 
