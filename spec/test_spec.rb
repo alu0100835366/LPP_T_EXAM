@@ -1,9 +1,10 @@
+# encoding: UTF-8
 require "lib/test.rb"
 
-describe Test do
+describe "test2" do
   before :each do
     @q1 = Test.new("Hola?", ["Si", "No", "Quizas", "Puede"], 3, 1)
-    @q2 = Test.new("¿Cual es la salida del siguiente còdigo Ruby? \n class Xyz \n   def pots \n     @nice \n   end \n end \n\n xyz = Xyz.new \n p xyz.pots", ['#<Xyz:0xa000208', 'nil', "0", "Ninguna de las anteriores"], 2, 2)
+    @q2 = Test.new('¿Cual es la salida del siguiente codigo Ruby?' "\n" 'class Xyz' "\n"'   def pots'" \n"'     @nice'" \n"'   end'" \n"' end '"\n\n"' xyz = Xyz.new'" \n"' p xyz.pots', ['#<Xyz:0xa000208', 'nil', "0", "Ninguna de las anteriores"], 2, 2)
     @q3 = Test.new("La siguiente definicion de un hash en Ruby es valida: \n hash_raro = { \n   [1, 2, 3] => Object.new(), \n   hash.new => :toto \n }", ["Cierto", "Falso"], 1,1);
     @q4 = Test.new('Cual es la salida del siguiente codigo Ruby?'"\n"' class Array'"\n"'   def say_hi'"\n"'     "HEY!"'"\n"'   end'"\n"' end'"\n\n"' p [1, "bob"].say_hi', ["1", "bob", "HEY!", "Ninguna de las anteriores"],3,3);
     @q5 = Test.new('¿Cual es el tipo del objeto en el siguiente codigo en Ruby?'"\n"'class Objeto'"\n"'end', ["Una instancia de la clase", "Una constante", "Un objeto", "Ninguna de las anteriores"], 4,4);
