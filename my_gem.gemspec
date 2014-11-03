@@ -2,6 +2,8 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'my_gem/version'
+require 'my_gem/list'
+require 'my_gem/test'
 
 Gem::Specification.new do |spec|
   spec.name          = "my-gem"

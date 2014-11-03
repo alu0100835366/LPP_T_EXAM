@@ -1,5 +1,5 @@
 # encoding: UTF-8
-require "lib/test.rb"
+require "lib/my_gem/test.rb"
 
 describe "test2" do
   before :each do
