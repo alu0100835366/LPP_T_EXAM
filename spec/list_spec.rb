@@ -1,4 +1,4 @@
-require "lib/my_gem/list.rb"
+require "lib/list.rb"
 describe "test" do
 	before :each do
 		@l = List.new(3)
