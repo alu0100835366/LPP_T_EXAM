@@ -20,7 +20,7 @@ describe "test" do
 	it "Se puede extraer el primer elemento" do
 		@l.pop
 	end
-	it "Se pueden intsertar y extraer varios elementos" do
+	it "Se pueden insertar y extraer varios elementos" do
 		@l.push(9)
 		@l.push(10)
 		@l.pop
