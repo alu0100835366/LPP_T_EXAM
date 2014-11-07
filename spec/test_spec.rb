@@ -1,5 +1,5 @@
 # encoding: UTF-8
-require "lib/test.rb"
+require "./lib/test.rb"
 
 describe "test2" do
   before :each do
@@ -47,39 +47,48 @@ describe "test2" do
       @q1.a.should eq @q1.a1[0]
     end
   end
-  /TESTS PARA LA PRRIMERA PREGUNTA/
+  #TESTS PARA LA PRRIMERA PREGUNTA
   describe "#Mostrar Pregunta 1" do
     it "Se muestra la pregunta correctamente" do
       @q2.to_s()
       @q2.a.should eq @q2.a1[1]
     end
   end
-  /TESTS PARA LA SEGUNDA PREGUNTA/
+  #TESTS PARA LA SEGUNDA PREGUNTA
   describe "#Mostrar Pregunta 2" do
     it "Se muestra la pregunta correctamente" do
       @q3.to_s()
       @q3.a.should eq @q3.a1[0]
     end
   end
-  /TESTS PARA LA TERCERA PREGUNTA/
+  #TESTS PARA LA TERCERA PREGUNTA
   describe "#Mostrar Pregunta 3" do
     it "Se muestra la pregunta correctamente" do
       @q4.to_s()
       @q4.a.should eq @q4.a1[2]
     end
   end
-  /TESTS PARA LA CUARTA PREGUNTA/
+  #TESTS PARA LA CUARTA PREGUNTA
   describe "#Mostrar Pregunta 4" do
     it "Se muestra la pregunta correctamente" do
       @q5.to_s()
       @q5.a.should eq @q5.a1[3]
     end
   end
-  /TESTS PARA LA QUINTA PREGUNTA/
+  #TESTS PARA LA QUINTA PREGUNTA
   describe "#Mostrar Pregunta 5" do
     it "Se muestra la pregunta correctamente" do
       @q6.to_s()
       @q6.a.should eq @q6.a1[0]
+    end
+  end
+  #TESTS varios
+  describe "#Varios" do
+    it "varios tests" do
+      expect(@q5).instance_of?(Test)
+      expect(@q6).instance_of?(Test)
+      expect(@q5).is_a?(Test)
+      expect(@q6).is_a?(Test)
     end
   end
 end
