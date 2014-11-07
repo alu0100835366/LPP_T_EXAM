@@ -1,33 +1,31 @@
 class List
 	attr_reader :head
-	attr_reader :tail
 
-	Node = Struct.new(:value, :next)
+	Node = Struct.new(:value, :next, :previous)
 
 	def initialize(first_value=nil)
-		@tail = Node.new(first_value,nil) if first_value
-		@head = @tail
+		@head = Node.new(first_value,nil,nil) if first_value
 	end
 
 	def push(value)
-		if @tail
-			new_node = Node.new(value, nil)
+		if @head
+			new_node = Node.new(value,nil,nil)
 			@head[:next] = new_node
+			new_node[:previous] = @head
 			@head = new_node
 		else
-			@tail = Node.new(value,nil)
-			@head = @tail
+			@head = Node.new(value,nil,nil)
 		end
 	end
 
 	def pop
-		if @tail
-			if @head==@tail
+		if @head
+			if @head[:previous]==nil
 				puts @head[:value]
-				@head=@tail=nil
+				@head=nil
 			else
-				puts @tail[:value]
-				@tail=@tail[:next]
+				puts @head[:value]
+				@head=@head[:previous]
 			end
 		else
 			puts "No elements left"

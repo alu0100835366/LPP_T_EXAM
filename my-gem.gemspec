@@ -6,10 +6,10 @@ require 'my_gem/version'
 Gem::Specification.new do |spec|
   spec.name          = "my-gem"
   spec.version       = My::Gem::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.authors       = ["Marcos y Antonio"]
+  spec.email         = ["marcosluisdelgado@gmail.com"]
+  spec.description   = %q{Practicas LPP}
+  spec.summary       = %q{No hay mucho que decir}
   spec.homepage      = ""
   spec.license       = "MIT"
 

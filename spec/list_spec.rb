@@ -11,7 +11,7 @@ describe "test" do
 	end
 	it "Funciona el metodo push y el nodo anterior apunta al nuevo" do
 		@l.push(4)
-		@l.tail.next.should eq(@l.head)
+		@l.head.previous.next.should eq(@l.head)
 	end
 	it "Se pueden insertar varios elementos" do
 		@l.push(5)
