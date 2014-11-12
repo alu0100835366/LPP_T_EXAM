@@ -36,28 +36,32 @@ class List
 	def pophead
 		if @head
 			if @head[:previous]==nil
-				puts @head[:value]
-				@head=nil
+				salida = @head[:value]
+				@tail=@head=nil
+				return salida;
 			else
-				puts @head[:value]
+				salida = @head[:value]
 				@head=@head[:previous]
+				return salida;
 			end
 		else
-			puts "No elements left"
+			return "No elements left"
 		end
 	end
 
 	def poptail
 		if @tail
 			if @tail[:next]==nil
-				puts @tail[:value]
-				@tail=nil
+				salida = @tail[:value]
+				@head=@tail=nil
+				return salida;
 			else
-				puts @tail[:value]
+				salida = @tail[:value]
 				@tail=@tail[:next]
+				return salida;
 			end
 		else
-			puts "No elements left"
+			return "No elements left"
 		end
 	end
 end

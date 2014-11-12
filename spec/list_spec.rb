@@ -30,21 +30,19 @@ describe "test" do
 		@l.pushtail(@q3)
 	end
 	it "Se puede extraer el primer elemento de la cabeza" do
-		@l.pophead
+		@l.pophead.should eq(@q1)
 	end
 	it "Se puede extraer el primer elemento de la cola" do
-		@l.poptail
+		@l.poptail.should eq(@q1)
 	end
 	it "Se pueden insertar y extraer varios elementos" do
 		@l.pushtail(@q4)
 		@l.pushhead(@q5)
-		@l.head.value.should eq(@q5)
-		@l.tail.value.should eq(@q4)
-		@l.pophead
-		@l.poptail
+		@l.pophead.should eq(@q5)
+		@l.poptail.should eq(@q4)
 	end
 	it "Extraer de una lista vacia da error" do
-		@l.pophead
-		@l.poptail
+		@l.pophead.should eq(@q1)
+		@l.poptail.should eq("No elements left")
 	end
 end
