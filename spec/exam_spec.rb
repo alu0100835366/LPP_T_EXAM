@@ -146,7 +146,24 @@ describe Test do
 		@l.poptail.should eq("No elements left")
 	end
 #Prct8
-	it "Funciona each" do
-		@l.max.should eq(@q1)
+	it "Funciona max" do
+		@l.pushhead(@q2)
+		(@l.max==@q2).should eq(true)
+		(@l.max==@q1).should eq(false)
+	end
+	it "Funciona min" do
+		@l.pushhead(@q2)
+		(@l.min==@q1).should eq(true)
+		(@l.min==@q2).should eq(false)
+	end
+	it "Funciona take" do
+		@l.pushhead(@q2)
+		(@l.take(2)==[@q1, @q2]).should eq(true)
+		(@l.take(2)==[@q2, @q1]).should eq(false)
+	end
+	it "Funciona first" do
+		@l.pushhead(@q2)
+		(@l.first==@q1).should eq(true)
+		(@l.first==@q2).should eq(false)
 	end
 end

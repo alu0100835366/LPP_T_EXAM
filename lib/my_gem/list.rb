@@ -1,9 +1,9 @@
+Node = Struct.new(:value, :next, :previous)
+
 class List
 	include Enumerable
 	attr_accessor :head
 	attr_accessor :tail
-
-	Node = Struct.new(:value, :next, :previous)
 
 	def initialize(first_value=nil)
 		@head = Node.new(first_value,nil,nil) if first_value
@@ -67,8 +67,8 @@ class List
 	end
 
 	def each
-		aux = @head
-		while aux != nil 
+		aux = @tail
+		while aux != nil
 			yield aux.value
 			aux = aux.next
 		end
