@@ -1,6 +1,7 @@
 class List
-	attr_reader :head
-	attr_reader :tail
+	include Enumerable
+	attr_accessor :head
+	attr_accessor :tail
 
 	Node = Struct.new(:value, :next, :previous)
 
@@ -62,6 +63,14 @@ class List
 			end
 		else
 			return "No elements left"
+		end
+	end
+
+	def each
+		aux = @head
+		while aux != nil 
+			yield aux.value
+			aux = aux.next
 		end
 	end
 end

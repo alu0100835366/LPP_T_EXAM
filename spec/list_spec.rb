@@ -1,7 +1,7 @@
 # encoding: UTF-8
 require "./lib/my_gem/test.rb"
 require "./lib/my_gem/list.rb"
-describe "test" do
+describe Test do
 	before :each do
 		@q1 = Test.new("Hola?", ["Si", "No", "Quizas", "Puede"], 3, 1)
     @q2 = Test.new('¿Cual es la salida del siguiente codigo Ruby?' "\n" 'class Xyz' "\n"'   def pots'" \n"'     @nice'" \n"'   end'" \n"' end '"\n\n"' xyz = Xyz.new'" \n"' p xyz.pots', ['#<Xyz:0xa000208', 'nil', "0", "Ninguna de las anteriores"], 2, 2)
@@ -44,5 +44,8 @@ describe "test" do
 	it "Extraer de una lista vacia da error" do
 		@l.pophead.should eq(@q1)
 		@l.poptail.should eq("No elements left")
+	end
+	it "Prueba de existencia each" do
+		@l.max.should eq(@q1)
 	end
 end
