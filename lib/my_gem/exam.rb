@@ -18,8 +18,12 @@ class Exam
 		@listp.tail.value.show()
 		if @answer==@listp.tail.value.t
 			@correct+=1
+			print "Usted eligio: ", @answer, "\n"
+			puts "Respuesta correcta", "\n"
 		else
 			@fail+=1
+			print "Usted eligio: ", @answer, "\n"
+			puts "Respuesta incorrecta", "\n"
 		end
 		@listp.poptail
 	end

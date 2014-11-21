@@ -19,7 +19,7 @@ class Test
       @a = a1[i]
        end
      end
-    print "\nLa respuesta correcta es: ", a, "\n\n\n\n"
+    print "\nLa respuesta correcta es: ", a, "\n"
   end
 end
 
@@ -37,6 +37,6 @@ class BTest < Test
        else
       @a = a1[1]
        end
-    print "\nLa respuesta correcta es: ", a, "\n\n\n\n"
+    print "\nLa respuesta correcta es: ", a, "\n"
   end 
 end
