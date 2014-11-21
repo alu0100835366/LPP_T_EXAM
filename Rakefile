@@ -1,7 +1,6 @@
-task :default => :spec
+$:.unshift File.dirname(__FILE__) + 'lib'
+require "bundler/gem_tasks"
 
-desc "Ejecutar las espectativas de la clase List y Test"
-task :spec do
-  sh "rspec -I. spec/exam_spec.rb"
-  sh "rspec -I. spec/exam_spec.rb"
-end
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new
+task :default => :spec
