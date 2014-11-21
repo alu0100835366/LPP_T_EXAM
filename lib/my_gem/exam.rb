@@ -15,6 +15,7 @@ class Exam
 	end
 	def checkquestion
 		#imprime pregunta y pide respuesta por pantalla.
+		@listp.tail.value.show()
 		if @answer==@listp.tail.value.t
 			@correct+=1
 		else
