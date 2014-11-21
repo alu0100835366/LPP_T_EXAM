@@ -38,7 +38,8 @@ describe Interfaz do
 		@in.exam.should eq(@ex)
 	end
 	it "Se realiza bien" do
-		@in.test([1,1,1,1,1,1])
+		@in.exam.answer=1
+		@in.test
 		@in.exam.correct.should eq(2)
 		@in.exam.fail.should eq(4)
 		@in.exam.nota.should eq(3)
