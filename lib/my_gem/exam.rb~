@@ -13,8 +13,9 @@ class Exam
 		@nota=0
 		@answer=nil
 	end
-	def checkquestion
+	def checkquestion(r)
 		#imprime pregunta y pide respuesta por pantalla.
+		@answer=r
 		@listp.tail.value.show()
 		if @answer==@listp.tail.value.t
 			@correct+=1
@@ -27,6 +28,9 @@ class Exam
 		end
 		@listp.poptail
 	end
+	def calcnote
+		@nota=@correct*10/(@correct+@fail)
+	end
 end
 
 class Interfaz
@@ -34,10 +38,10 @@ class Interfaz
 	def initialize(e)
 		@exam=e
 	end
-	def test
+	def test(r)
 		for i in(0...@exam.listp.size)
-			@exam.checkquestion
+			@exam.checkquestion(r[i])
 		end
-		@exam.nota=@exam.correct*10/(@exam.correct+@exam.fail)
+		@exam.calcnote
 	end
 end

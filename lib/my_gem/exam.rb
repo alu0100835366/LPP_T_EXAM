@@ -19,14 +19,17 @@ class Exam
 		@listp.tail.value.show()
 		if @answer==@listp.tail.value.t
 			@correct+=1
-			print "Usted eligio: ", @answer, "\n"
-			puts "Respuesta correcta", "\n"
+			#print "Usted eligio: ", @answer, "\n"
+			#puts "Respuesta correcta", "\n"
 		else
 			@fail+=1
-			print "Usted eligio: ", @answer, "\n"
-			puts "Respuesta incorrecta", "\n"
+			#print "Usted eligio: ", @answer, "\n"
+			#puts "Respuesta incorrecta", "\n"
 		end
 		@listp.poptail
+	end
+	def calcnote
+		@nota=@correct*10/(@correct+@fail)
 	end
 end
 
@@ -39,6 +42,6 @@ class Interfaz
 		for i in(0...@exam.listp.size)
 			@exam.checkquestion(r[i])
 		end
-		@exam.nota=@exam.correct*10/(@exam.correct+@exam.fail)
+		@exam.calcnote
 	end
 end
