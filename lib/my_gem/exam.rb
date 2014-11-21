@@ -2,7 +2,7 @@ require_relative "list"
 require_relative "test"
 
 class Exam
-	attr_accessor :listp, :correct, :fail, :nota, :answer
+	attr_reader :listp, :correct, :fail, :nota, :answer
 	def initialize(p)
 		@listp=List.new
 		for i in(0...p.size)
@@ -34,7 +34,7 @@ class Exam
 end
 
 class Interfaz
-	attr_accessor :exam
+	attr_reader :exam
 	def initialize(e)
 		@exam=e
 	end
