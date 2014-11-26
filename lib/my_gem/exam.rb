@@ -1,8 +1,10 @@
+# @author Antonio Suarez, Marcos Delgado
+
 require_relative "list"
 require_relative "test"
 
 class Exam
-	attr_reader :listp, :correct, :fail, :nota, :answer
+	attr_accessor :listp, :correct, :fail, :nota, :answer
 	def initialize(p)
 		@listp=List.new
 		for i in(0...p.size)
@@ -13,35 +15,32 @@ class Exam
 		@nota=0
 		@answer=nil
 	end
-	def checkquestion(r)
+	# @return Imprime las preguntas y pide la respuesta del usuario
+	def checkquestion
 		#imprime pregunta y pide respuesta por pantalla.
-		@answer=r
 		@listp.tail.value.show()
 		if @answer==@listp.tail.value.t
 			@correct+=1
-			#print "Usted eligio: ", @answer, "\n"
-			#puts "Respuesta correcta", "\n"
+			print "Usted eligio: ", @answer, "\n"
+			puts "Respuesta correcta", "\n"
 		else
 			@fail+=1
-			#print "Usted eligio: ", @answer, "\n"
-			#puts "Respuesta incorrecta", "\n"
+			print "Usted eligio: ", @answer, "\n"
+			puts "Respuesta incorrecta", "\n"
 		end
 		@listp.poptail
-	end
-	def calcnote
-		@nota=@correct*10/(@correct+@fail)
 	end
 end
 
 class Interfaz
-	attr_reader :exam
+	attr_accessor :exam
 	def initialize(e)
 		@exam=e
 	end
-	def test(r)
+	def test
 		for i in(0...@exam.listp.size)
-			@exam.checkquestion(r[i])
+			@exam.checkquestion
 		end
-		@exam.calcnote
+		@exam.nota=@exam.correct*10/(@exam.correct+@exam.fail)
 	end
 end
