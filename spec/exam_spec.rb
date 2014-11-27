@@ -43,4 +43,13 @@ describe Interfaz do
 		@in.exam.fail.should eq(4)
 		@in.exam.nota.should eq(3)
 	end
+	it "Se da la vuelta" do
+		@ex.reverse
+		@ex.listp.poptail.should eq(@q6)
+		@ex.listp.poptail.should eq(@q5)
+		@ex.listp.poptail.should eq(@q4)
+		@ex.listp.poptail.should eq(@q3)
+		@ex.listp.poptail.should eq(@q2)
+		@ex.listp.poptail.should eq(@q1)
+	end
 end

@@ -1,6 +1,6 @@
 # encoding: UTF-8
-require "test.rb"
-require "list.rb"
+require 'my-gem'
+require 'spec_helper'
 
 describe Test do
   before :each do
@@ -45,42 +45,42 @@ describe Test do
   end
   describe "#Mostrar Pregunta" do
     it "Se muestra la pregunta correctamente" do
-      @q1.show()
+      #@q1.show()
       @q1.a.should eq @q1.a1[0]
     end
   end
   #TESTS PARA LA PRRIMERA PREGUNTA
   describe "#Mostrar Pregunta 1" do
     it "Se muestra la pregunta correctamente" do
-      @q2.show()
+      #@q2.show()
       @q2.a.should eq @q2.a1[1]
     end
   end
   #TESTS PARA LA SEGUNDA PREGUNTA
   describe "#Mostrar Pregunta 2" do
     it "Se muestra la pregunta correctamente" do
-      @q3.show()
+      #@q3.show()
       @q3.a.should eq @q3.a1[0]
     end
   end
   #TESTS PARA LA TERCERA PREGUNTA
   describe "#Mostrar Pregunta 3" do
     it "Se muestra la pregunta correctamente" do
-      @q4.show()
+      #@q4.show()
       @q4.a.should eq @q4.a1[2]
     end
   end
   #TESTS PARA LA CUARTA PREGUNTA
   describe "#Mostrar Pregunta 4" do
     it "Se muestra la pregunta correctamente" do
-      @q5.show()
+      #@q5.show()
       @q5.a.should eq @q5.a1[3]
     end
   end
   #TESTS PARA LA QUINTA PREGUNTA
   describe "#Mostrar Pregunta 5" do
     it "Se muestra la pregunta correctamente" do
-      @q6.show()
+      #@q6.show()
       @q6.a.should eq @q6.a1[0]
     end
   end
