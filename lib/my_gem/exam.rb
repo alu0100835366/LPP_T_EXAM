@@ -15,7 +15,7 @@ class Exam
 		@nota=0
 		@answer=nil
 	end
-	# @return Imprime las preguntas y pide la respuesta del usuario
+ Imprime las preguntas y pide la respuesta del usuario
 	def checkquestion(ans)
 		#imprime pregunta y pide respuesta por pantalla.
 		#@listp.tail.value.show()

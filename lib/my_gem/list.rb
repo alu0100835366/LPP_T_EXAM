@@ -9,7 +9,8 @@ class List
 		@head = Node.new(first_value,nil,nil) if first_value
 		@tail = @head
 	end
-	#Añade un nodo a la cabeza de la lista
+	# @return Añade un nodo a la cabeza de la lista
+
 	def pushhead(value)
 		if @head
 			new_node = Node.new(value,nil,nil)
@@ -21,7 +22,7 @@ class List
 			@tail = @head
 		end
 	end
-	#Añade un nodo a la cola de la lista
+	# @return Añade un nodo a la cola de la lista
 	def pushtail(value)
 		if @tail
 			new_node = Node.new(value,nil,nil)
@@ -33,7 +34,7 @@ class List
 			@tail = @head
 		end
 	end
-	#Saca el nodo que está en la cabeza
+	# @return Saca el nodo que está en la cabeza
 	def pophead
 		if @head
 			if @head[:previous]==nil
@@ -49,7 +50,7 @@ class List
 			return "No elements left"
 		end
 	end
-	#Saca el nodo que está en la cola
+	# @return Saca el nodo que está en la cola
 	def poptail
 		if @tail
 			if @tail[:next]==nil
@@ -65,7 +66,7 @@ class List
 			return "No elements left"
 		end
 	end
-	#Devuelve el tamaño de la lista
+	# @return Devuelve el tamaño de la lista
 	def size
 		aux1=@head.previous
 		aux2=1
@@ -75,7 +76,7 @@ class List
 		end
 		return aux2
 	end
-	#Metodo necesario para hacer la lista enumerable
+	# @return hace la lista enumerable
 	def each
 		aux = @tail
 		while aux != nil
